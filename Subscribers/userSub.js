@@ -1,6 +1,6 @@
 const mqtt = require("mqtt");
 const client = mqtt.connect("mqtt://test.mosquitto.org");
-let topic = "DG";
+let topic = "testDG";
 
 
 client.on('connect',()=>{

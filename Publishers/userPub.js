@@ -1,6 +1,4 @@
-const mqtt = require('mqtt');
-const client = mqtt.connect('mqtt://test.mosquitto.org');
-let topic = "DG"
+const {Publisher} = require("./Publisher");
 let message = [
     {
         name : "Dogukan",
@@ -13,17 +11,7 @@ let message = [
         age : 999
     }
 ]
-client.on('connect',()=>{
-    client.subscribe(topic, err => {
-        if(!err){
-            setInterval(()=>{
-                client.publish(topic, JSON.stringify(message));
-            },100)
-            
-        }else{
-            console.log("Error in subscribe process", err);
-        }
-    });
+let userPublisher = new Publisher("mqtt://test.mosquitto.org","testDG",message);
+userPublisher.connectPub();
 
-    
-});
+//userPublisher.connectPub();
