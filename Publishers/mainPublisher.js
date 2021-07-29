@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var Publisher_1 = require("./Publisher");
 var uuid_1 = require("uuid");
 var server = "mqtt://test.mosquitto.org";
