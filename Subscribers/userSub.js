@@ -1,7 +1,8 @@
 const mqtt = require("mqtt");
 const client = mqtt.connect("mqtt://test.mosquitto.org");
-let topic = "testDG";
+let topic = "test";
 
+console.log(typeof mqtt);
 
 client.on('connect',()=>{
     client.subscribe(topic);
